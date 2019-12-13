@@ -81,6 +81,7 @@ def main():
     # read training images and camera poses
     images = np.load(args.filename_input).astype('float32') / 255.
     cameras = np.load(args.camera_input).astype('float32')
+    print('cameras', cameras)
     optimizer = torch.optim.Adam(model.parameters(), 0.01, betas=(0.5, 0.99))
 
     camera_distances = torch.from_numpy(cameras[:, 0])
